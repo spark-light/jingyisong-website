@@ -114,9 +114,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .nav-links li a {
     display: inline-block;
-    padding: 6px 6px;                   /* c1-2k / c1-2n */
+    padding: 8px 8px;                   /* scaled up from 6px */
     font-family: var(--font-body);
-    font-size: 14px;                    /* c1-3j */
+    font-size: 16px;                    /* scaled up from 14px */
     font-weight: 400;                   /* c1-3v */
     letter-spacing: 0.143em;            /* c1-3c */
     text-transform: uppercase;          /* c1-3d */
@@ -184,7 +184,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .hero-name {
     font-family: var(--font-heading);
-    font-size: 40px;
+    font-size: 52px;                    /* scaled up from 40px */
     font-weight: 500;
     color: var(--color-dark-text);
     line-height: 1.2;
@@ -193,7 +193,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .hero-name-cn {
     display: block;
-    font-size: 32px;
+    font-size: 40px;                    /* scaled up from 32px */
     font-weight: 400;
     margin-top: 0.25rem;
 }
@@ -281,7 +281,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .home-quote-text {
     font-family: var(--font-heading);
-    font-size: 24px;
+    font-size: 32px;                    /* scaled up from 24px */
     font-weight: 500;
     color: var(--color-dark-text);
     line-height: 1.4;
@@ -289,7 +289,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .section-heading {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 28px;                    /* scaled up from 22px */
     font-weight: 700;
     color: var(--color-dark-text);
     margin-bottom: 32px;             /* c1-t */
@@ -318,7 +318,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .bio-text h3 {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 28px;                    /* scaled up from 22px */
     font-weight: 700;
     color: var(--color-dark-text);
     margin-bottom: 16px;   /* c1-5o */
@@ -327,7 +327,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .bio-text p {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 18px;                    /* scaled up from 16px */
     line-height: 1.5;
     color: var(--color-text);
     margin-bottom: 16px;
@@ -391,7 +391,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .video-section-heading {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 28px;                    /* scaled up from 22px */
     font-weight: 700;
     color: var(--color-dark-text);
     margin-bottom: 24px;
@@ -423,7 +423,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .video-info h4 {
     font-family: var(--font-heading);
-    font-size: 14px;
+    font-size: 16px;                    /* scaled up from 14px */
     font-weight: 700;
     color: var(--color-dark-text);
     margin-bottom: 4px;
@@ -499,7 +499,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .contact-form-section h2,
 .contact-info-section h2 {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 28px;                    /* scaled up from 22px */
     font-weight: 700;
     color: var(--color-dark-text);
     margin-bottom: 24px;
@@ -526,7 +526,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     border: 1px solid var(--color-divider);
     border-radius: 4px;
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 18px;                    /* scaled up from 16px */
     color: var(--color-text);
     background: var(--color-bg);
     line-height: 1.5;
