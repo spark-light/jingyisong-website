@@ -30,7 +30,7 @@
 
     /* Layout */
     --nav-height: 72px;
-    --container-max: 1100px;
+    --container-max: 1280px;
     --container-pad: 24px;     /* c1-13 / c1-14 */
 }
 
@@ -164,10 +164,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 */
 .hero-split {
     display: flex;
-    min-height: 500px; /* Or a reasonable height */
-    height: 65vh;
-    margin-top: calc(var(--nav-height) + 2rem);
-    margin-bottom: 4rem;
+    height: 740px; /* Matching the 739.195px height from dev tools */
+    margin-top: 64px; /* Matching the 64px top margin */
+    margin-bottom: 24px; /* Matching the 24px bottom margin */
     overflow: hidden;
 }
 
