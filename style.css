@@ -62,7 +62,6 @@ ul { list-style: none; padding: 0; margin: 0; }
     right: 0;
     height: var(--nav-height);
     background-color: var(--color-bg);
-    border-bottom: 1px solid var(--color-divider);
     z-index: 1003;
     display: flex;
     align-items: center;
@@ -118,7 +117,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     padding: 6px 6px;                   /* c1-2k / c1-2n */
     font-family: var(--font-body);
     font-size: 14px;                    /* c1-3j */
-    font-weight: 700;                   /* c1-3k */
+    font-weight: 300;                   /* Matches uploaded styles */
     letter-spacing: 0.143em;            /* c1-3c */
     text-transform: uppercase;          /* c1-3d */
     color: var(--color-text);           /* c1-2d: rgb(27,27,27) */
