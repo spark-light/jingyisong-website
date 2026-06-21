@@ -160,19 +160,20 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* === HERO — Two-column split layout matching original exactly ===
-   Left panel: light gray bg, text centered, name + tagline + button
-   Right panel: photo fills full height
+   Contained inside section-container
 */
 .hero-split {
     display: flex;
-    height: calc(100vh - var(--nav-height));
-    margin-top: var(--nav-height);
+    min-height: 500px; /* Or a reasonable height */
+    height: 65vh;
+    margin-top: calc(var(--nav-height) + 2rem);
+    margin-bottom: 4rem;
     overflow: hidden;
 }
 
 /* LEFT panel — light background with centered text */
 .hero-left {
-    flex: 0 0 42%;
+    flex: 0 0 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,6 +254,38 @@ ul { list-style: none; padding: 0; margin: 0; }
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 40px var(--container-pad);  /* c1-h / c1-i: 40px */
+}
+
+/* === HOME QUOTE SECTION === */
+.home-quote-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    gap: 3rem;
+}
+
+.quote-image-wrapper {
+    flex: 0 0 45%;
+}
+
+.quote-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.quote-text-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.home-quote-text {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-dark-text);
+    line-height: 1.4;
 }
 
 .section-heading {
