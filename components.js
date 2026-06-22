@@ -7,16 +7,24 @@ function getHeaderHTML(activePage) {
     return `
 <nav class="navbar">
     <div class="nav-centered">
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="${activePage === 'home' ? 'active' : ''}">HOME/主页</a></li>
-            <li><a href="biography.html" class="${activePage === 'biography' ? 'active' : ''}">BIOGRAPHY/关于我</a></li>
-            <li><a href="gallery.html" class="${activePage === 'gallery' ? 'active' : ''}">GALLERY/照片</a></li>
-            <li><a href="contact.html" class="${activePage === 'contact' ? 'active' : ''}">CONTACT ME/联系我</a></li>
-            <li><a href="review.html" class="${activePage === 'review' ? 'active' : ''}">REVIEW/留言</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
+        <div class="nav-mobile-brand">
+            <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </div>
+            ${activePage === 'home' ? '' : `
+            <a href="/" class="nav-brand-info">
+                <span class="nav-brand-title">Jingyi Song 宋静宜</span>
+                <span class="nav-brand-subtitle">Violist, Violin and Viola Teacher</span>
+            </a>
+            `}
         </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/" class="${activePage === 'home' ? 'active' : ''}">HOME/主页</a></li>
+            <li><a href="/biography" class="${activePage === 'biography' ? 'active' : ''}">BIOGRAPHY/关于我</a></li>
+            <li><a href="/gallery" class="${activePage === 'gallery' ? 'active' : ''}">GALLERY/照片</a></li>
+            <li><a href="/contact" class="${activePage === 'contact' ? 'active' : ''}">CONTACT ME/联系我</a></li>
+            <li><a href="/review" class="${activePage === 'review' ? 'active' : ''}">REVIEW/留言</a></li>
+        </ul>
     </div>
 </nav>
     `;
@@ -24,7 +32,7 @@ function getHeaderHTML(activePage) {
 
 function getTaglineBannerHTML() {
     return `
-<div class="section-container" style="padding-top: 2.5rem; padding-bottom: 0.5rem;">
+<div class="section-container tagline-banner-container" style="padding-top: 2.5rem; padding-bottom: 0.5rem;">
     <div class="bio-hero-banner">
         <h1 class="bio-hero-name">Jingyi Song<span class="bio-hero-name-cn">宋静宜</span></h1>
         <p class="bio-hero-tagline">Violist, Violin and Viola Teacher</p>

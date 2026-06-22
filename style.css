@@ -156,6 +156,10 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* Hamburger (mobile) */
+.nav-mobile-brand {
+    display: none;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -861,18 +865,23 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Mobile nav — dark slide-in panel matching c1-4j */
+    /* Hide footer completely on mobile */
+    footer {
+        display: none !important;
+    }
+
+    /* Mobile nav — light dropdown matching premium minimalist style */
     .nav-links {
         display: none;
         position: fixed;
         top: var(--nav-height);
         left: 0;
         right: 0;
-        background-color: var(--color-nav-dark);  /* c1-4j: rgb(22,22,22) */
+        background-color: var(--color-bg);
         flex-direction: column;
-        padding: 16px 0;
+        padding: 8px 0;
         z-index: 10002;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         height: auto;
         align-items: stretch;
     }
@@ -884,31 +893,190 @@ footer {
     .nav-links li a {
         display: block;
         height: auto;
-        color: var(--color-alt-bg);   /* c1-4w: rgb(247,247,247) */
-        padding: 12px 24px;
+        color: var(--color-text);
+        padding: 14px 24px;
         width: 100%;
-        font-size: 12px;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         border-top: none;
-        border-bottom: 1px solid rgba(76,76,76,0.5);  /* c1-5b */
-        box-sizing: content-box;
+        border-bottom: 1px solid var(--color-divider);
+        box-sizing: border-box;
+        transition: background-color 0.2s, color 0.2s;
     }
     .nav-links li:last-child a { border-bottom: none; }
-    .nav-links li a:hover { color: var(--color-accent); }  /* c1-52: rgb(165,232,215) */
+    .nav-links li a:hover {
+        background-color: var(--color-alt-bg);
+        color: var(--color-accent-mid);
+    }
     .nav-links li a.active {
-        color: var(--color-accent);
+        color: var(--color-accent-mid);
         border-top: none;
-        padding-top: 12px;
+        padding-top: 14px;
         margin-top: 0;
+        background-color: var(--color-alt-bg);
+        font-weight: 500;
+    }
+    .nav-mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .nav-brand-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+    .nav-brand-title {
+        font-family: var(--font-heading);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-dark-text);
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+    .nav-brand-subtitle {
+        font-family: Georgia, serif;
+        font-size: 10px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--color-muted);
+        line-height: 1.2;
+        margin-top: 2px;
+        white-space: nowrap;
     }
     .hamburger { display: flex; }
+
+    /* Hamburger open visual transition */
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 
     .hero h1 { font-size: 24px; }
     .hero h1 .chinese { font-size: 18px; }
 
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .bio-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center top;
+    }
+    .bio-section-bg {
+        border-top: none !important;
+        border-bottom: none !important;
+    }
+    .biography-english-section {
+        padding-bottom: 1rem !important;
+    }
+    .biography-chinese-section {
+        padding-top: 1rem !important;
+    }
+
     .video-row-two { grid-template-columns: 1fr; gap: 24px; }
+    .video-layout { gap: 24px; }
+    .video-item.full-width { margin-bottom: 0; }
+    .gallery-full-container { padding-bottom: 1.5rem !important; }
+    .video-section-container { padding-top: 0.5rem !important; }
 
     .section-container { padding: 32px 16px; }
+
+    /* Home Hero - Stack text on top, photo below, clean white background, full portrait details */
+    .hero-split {
+        flex-direction: column;
+        height: auto;
+        margin-top: 0;
+    }
+    .hero-left {
+        flex: none;
+        width: 100%;
+        padding: 2rem 1.5rem 1.5rem;
+        background-color: transparent;
+    }
+    .hero-name, .bio-hero-name {
+        font-size: 34px !important;
+        margin-bottom: 0 !important;
+        line-height: 1.2;
+    }
+    .hero-name-cn, .bio-hero-name-cn {
+        font-size: 26px !important;
+        margin-top: 6px !important;
+    }
+    .hero-tagline, .bio-hero-tagline {
+        font-size: 15px !important;
+        margin-top: 12px !important;
+    }
+    .hero-right {
+        flex: none;
+        width: 100%;
+        height: auto;
+    }
+    .hero-photo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Hide inner page tagline banners on mobile as it is now in the header navbar */
+    .tagline-banner-container {
+        display: none !important;
+    }
+
+    /* Modern Mobile Section Headings */
+    .section-heading, .video-section-heading {
+        align-items: flex-start;
+        text-align: left;
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+    }
+    .section-heading::after, .video-section-heading::after {
+        display: none;
+    }
+
+    .contact-details-wrap {
+        padding-top: 0;
+    }
+
+    .home-quote-section {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    .quote-image-wrapper {
+        flex: none;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+    }
+    .quote-text-wrapper {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    .home-quote-text {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 480px) {
