@@ -32,7 +32,7 @@ function getHeaderHTML(activePage) {
 
 function getTaglineBannerHTML() {
     return `
-<div class="section-container tagline-banner-container" style="padding-top: 2.5rem; padding-bottom: 0.5rem;">
+<div class="section-container tagline-banner-container" style="padding-top: 2rem; padding-bottom: 0.5rem;">
     <div class="bio-hero-banner">
         <h1 class="bio-hero-name">Jingyi Song<span class="bio-hero-name-cn">宋静宜</span></h1>
         <p class="bio-hero-tagline">Violist, Violin and Viola Teacher</p>

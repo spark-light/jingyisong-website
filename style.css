@@ -37,7 +37,6 @@
 /* === BASE === */
 html {
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
 }
 
 body {
@@ -868,9 +867,10 @@ footer {
         top: var(--nav-height);
         left: 0;
         right: 0;
-        background-color: var(--color-bg);
+        background-color: #eff5f3; /* soft modern sage-gray distinct from main body */
         flex-direction: column;
-        padding: 8px 0;
+        padding: 0; /* shortened the container to match button highlights exactly */
+        gap: 0; /* remove desktop flex gap to make highlight backgrounds contiguous */
         z-index: 10002;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         height: auto;
@@ -885,27 +885,27 @@ footer {
         display: block;
         height: auto;
         color: var(--color-text);
-        padding: 14px 24px;
+        padding: 16px 24px;
         width: 100%;
         font-size: 14px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         border-top: none;
-        border-bottom: 1px solid var(--color-divider);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* very soft divider line */
         box-sizing: border-box;
         transition: background-color 0.2s, color 0.2s;
     }
     .nav-links li:last-child a { border-bottom: none; }
     .nav-links li a:hover {
-        background-color: var(--color-alt-bg);
+        background-color: #dcece7; /* modern sage-mint highlight */
         color: var(--color-accent-mid);
     }
     .nav-links li a.active {
         color: var(--color-accent-mid);
         border-top: none;
-        padding-top: 14px;
+        padding: 16px 24px; /* matching regular buttons in height */
         margin-top: 0;
-        background-color: var(--color-alt-bg);
+        background-color: #dcece7; /* highlighted background height equals container */
         font-weight: 500;
     }
     .nav-mobile-brand {
