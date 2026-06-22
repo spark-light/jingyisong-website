@@ -31,7 +31,14 @@ class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
             super().do_GET()
             return
 
-        # 4. Fallback to default handler
+        # 4. Serve 404.html if it exists (for unrecognized routing)
+        translated_404 = self.translate_path('/404.html')
+        if os.path.exists(translated_404):
+            self.path = '/404.html'
+            super().do_GET()
+            return
+
+        # 5. Fallback to default handler
         super().do_GET()
 
 if __name__ == '__main__':

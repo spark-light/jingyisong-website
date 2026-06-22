@@ -1,5 +1,5 @@
 /* === FONTS — matching live site exactly === */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=EB+Garamond:ital,wght@1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;700&display=swap');
 
 /* === RESET === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -298,12 +298,12 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .home-quote-text {
-    font-family: Georgia, serif;
-    font-size: 32px;                    /* scaled up from 24px */
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--color-dark-text);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .section-heading {
@@ -398,8 +398,6 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .bio-section-bg {
     background-color: var(--color-bg);
-    border-top: 1px solid var(--color-divider);
-    border-bottom: 1px solid var(--color-divider);
 }
 
 /* Chinese bio: reverse column order */
@@ -972,11 +970,12 @@ footer {
         height: auto;
         aspect-ratio: 1 / 1;
         object-fit: cover;
-        object-position: center top;
     }
-    .bio-section-bg {
-        border-top: none !important;
-        border-bottom: none !important;
+    .biography-english-section .bio-image {
+        object-position: center 20%;
+    }
+    .biography-chinese-section .bio-image {
+        object-position: center 20%;
     }
     .biography-english-section {
         padding-bottom: 1rem !important;
