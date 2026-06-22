@@ -55,7 +55,6 @@ function getFooterHTML() {
             </a>
         </div>
         <p class="footer-copy">Copyright © 2026 Jingyi Song All Rights Reserved</p>
-        <hr class="footer-divider-bottom">
     </div>
 </footer>
     `;

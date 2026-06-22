@@ -842,13 +842,6 @@ footer {
     margin-bottom: 16px;
 }
 
-.footer-divider-bottom {
-    width: 50px;
-    border: none;
-    border-top: 1px solid var(--color-divider);
-    margin-top: 8px;
-}
-
 .footer-copy {
     font-family: var(--font-body);
     font-size: 14px;
