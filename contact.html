@@ -7,102 +7,42 @@
     <meta name="description" content="Contact Dr. Jingyi Song — violin and viola lessons, events, weddings, and gigs.">
     <meta name="theme-color" content="#a5e8d7">
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <script src="components.js?v=1.2"></script>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-centered">
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">HOME/主页</a></li>
-            <li><a href="biography.html">BIOGRAPHY/关于我</a></li>
-            <li><a href="gallery.html">GALLERY/照片</a></li>
-            <li><a href="contact.html" class="active">CONTACT ME/联系我</a></li>
-            <li><a href="review.html">REVIEW/留言</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
-</nav>
+<div id="header-placeholder"></div>
+<script>document.getElementById('header-placeholder').outerHTML = getHeaderHTML('contact');</script>
 
-<main>
-    <div class="section-container" style="padding-top: calc(var(--nav-height) + 3rem);">
-        <div class="contact-layout">
+<main style="padding-top: var(--nav-height);">
+    <!-- Centered Name & Tagline Banner -->
+    <div id="tagline-placeholder"></div>
+    <script>document.getElementById('tagline-placeholder').outerHTML = getTaglineBannerHTML();</script>
 
-            <!-- Left: Contact Form -->
-            <div class="contact-form-section">
-                <h2>Contact Me</h2>
-                <form id="contactForm" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Send</button>
-                    <p style="margin-top:1rem;font-size:0.75rem;color:#888;">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent-dark)">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" style="color:var(--accent-dark)">Terms of Service</a> apply.</p>
-                </form>
-                <div id="formSuccess" style="display:none;padding:1rem;background:#e8f7f3;border-radius:4px;color:#2a7a5e;margin-top:1rem;">
-                    Thank you! Your message has been sent.
-                </div>
+    <div class="section-container" style="padding-top: 1rem; padding-bottom: 3.5rem;">
+        <h2 class="section-heading">Contact Me</h2>
+        
+        <div class="contact-details-wrap">
+            <div class="contact-block">
+                <h3>In-Person Lessons/Virtual Lessons</h3>
+                <p>I offer 30, 45, 60 minute private lessons for both violin and viola. If you have two or more kids who would like to take lessons together, you can choose the group lessons for your kids. I also teach Pattern Play/Music Theory for the beginner kids.</p>
             </div>
-
-            <!-- Right: Contact Info + Services -->
-            <div class="contact-info-section">
-                <h2>Get in Touch</h2>
-                <ul class="contact-list">
-                    <li>
-                        <strong>Phone</strong>
-                        <a href="tel:15129818538">+1 512-981-8538</a>
-                    </li>
-                    <li>
-                        <strong>Email</strong>
-                        <a href="mailto:songjingyi0221@outlook.com">songjingyi0221@outlook.com</a>
-                    </li>
-                    <li>
-                        <strong>微信 / WeChat</strong>
-                        <span>765614892</span>
-                    </li>
-                </ul>
-
-                <hr class="bio-divider" style="margin: 2rem 0">
-
-                <h2>Services</h2>
-                <div class="service-block">
-                    <h3>In-Person Lessons / Virtual Lessons</h3>
-                    <p>I offer 30, 45, 60 minute private lessons for both violin and viola. If you have two or more kids who would like to take lessons together, you can choose the group lessons for your kids. I also teach Pattern Play/Music Theory for the beginner kids.</p>
-                </div>
-                <div class="service-block">
-                    <h3>Events / Weddings / Gigs</h3>
-                    <p>Available for special events, weddings, and performance engagements. Please reach out to discuss your event.</p>
-                </div>
+            
+            <div class="contact-block">
+                <h3>Events/Weddings/Gigs</h3>
+                <p class="contact-info-links">
+                    Phone Number: <a href="tel:15129818538">+1 512-981-8538</a><br>
+                    Email: <a href="mailto:songjingyi0221@outlook.com">songjingyi0221@outlook.com</a><br>
+                    微信/Wechat: 765614892
+                </p>
             </div>
-
         </div>
     </div>
 </main>
 
-<footer>
-    <div class="footer-inner">
-        <div class="footer-social">
-            <a href="https://www.youtube.com/@Jingyi_Song" target="_blank" rel="noopener" aria-label="YouTube Channel">
-                <svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000">
-                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10A10 10 0 0012 2z"/>
-                    <path fill-rule="evenodd" fill="#fff" d="M17.607 14.302s.066-.931.066-1.866l.003-.88c0-.93-.069-1.865-.069-1.865a2.363 2.363 0 00-.436-1.146 1.702 1.702 0 00-1.16-.52c-1.615-.116-4.025-.149-4.025-.149s-2.422.033-4.037.15c-.436.012-.85.193-1.156.505-.335.349-.364 1.153-.364 1.153s-.033.942-.033 1.876v.884c0 .93.033 1.865.033 1.865.033.413.177.809.418 1.146.344.31.788.484 1.251.49.924.088 3.913.117 3.913.117s2.418-.004 4.033-.12c.433-.004.847-.18 1.152-.488.242-.338.384-.737.411-1.152zm-3.68-2.422l-3.116 1.614-.004-3.24 3.12 1.626z"/>
-                </svg>
-            </a>
-        </div>
-        <hr style="width:100%;max-width:400px;border:none;border-top:1px solid #ddd">
-        <p class="footer-copy">Copyright © 2025 Jingyi Song All Rights Reserved</p>
-    </div>
-</footer>
+<div id="footer-placeholder"></div>
+<script>document.getElementById('footer-placeholder').outerHTML = getFooterHTML();</script>
 
 <script src="script.js"></script>
 </body>

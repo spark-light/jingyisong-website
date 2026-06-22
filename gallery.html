@@ -7,30 +7,21 @@
     <meta name="description" content="Gallery of performances and photos — Jingyi Song, Violist.">
     <meta name="theme-color" content="#a5e8d7">
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <script src="components.js?v=1.2"></script>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-centered">
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">HOME/主页</a></li>
-            <li><a href="biography.html">BIOGRAPHY/关于我</a></li>
-            <li><a href="gallery.html" class="active">GALLERY/照片</a></li>
-            <li><a href="contact.html">CONTACT ME/联系我</a></li>
-            <li><a href="review.html">REVIEW/留言</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
-</nav>
+<div id="header-placeholder"></div>
+<script>document.getElementById('header-placeholder').outerHTML = getHeaderHTML('gallery');</script>
 
-<main>
-    <div class="section-container" style="padding-top: calc(var(--nav-height) + 3rem);">
+<main style="padding-top: var(--nav-height);">
+    <!-- Centered Name & Tagline Banner -->
+    <div id="tagline-placeholder"></div>
+    <script>document.getElementById('tagline-placeholder').outerHTML = getTaglineBannerHTML();</script>
 
+    <div class="gallery-full-container" style="width: 100%; padding-top: 0; padding-bottom: 3.5rem;">
         <!-- Photo Grid -->
-        <h2 class="section-heading" style="margin-bottom:1.5rem;">Gallery / 照片</h2>
         <div class="gallery-grid" id="galleryGrid">
             <div class="gallery-item" data-index="0">
                 <img src="images/gallery1.jpg" alt="Performance photo 1" loading="lazy">
@@ -57,19 +48,26 @@
                 <div class="gallery-caption">String Project BVlaEA/B students, Austin, TX</div>
             </div>
             <div class="gallery-item" data-index="6">
-                <img src="images/gallery7.jpg" alt="Performance photo 7" loading="lazy">
+                <img src="images/gallery9.jpg" alt="Performance photo 9" loading="lazy">
                 <div class="gallery-caption">Jingyi Song</div>
             </div>
             <div class="gallery-item" data-index="7">
+                <img src="images/gallery7.jpg" alt="Performance photo 7" loading="lazy">
+                <div class="gallery-caption">Jingyi Song</div>
+            </div>
+            <div class="gallery-item" data-index="8">
                 <img src="images/gallery8.jpg" alt="Performance photo 8" loading="lazy">
                 <div class="gallery-caption">Jingyi Song</div>
             </div>
         </div>
+    </div>
 
-        <!-- Videos Section -->
-        <p class="video-section-title">Video</p>
-        <div class="video-grid">
-            <div>
+    <!-- Videos Section -->
+    <div class="section-container" style="padding-top: 2rem; padding-bottom: 3.5rem;">
+        <h2 class="video-section-heading">Video</h2>
+        <div class="video-layout">
+            <!-- Full-width top video -->
+            <div class="video-item full-width">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/b2O1cNFLFk0?rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -78,22 +76,26 @@
                     <p>Sonata for Viola and Piano in C minor (1824) by Felix Mendelssohn.</p>
                 </div>
             </div>
-            <div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/EXHV5JSLK0c?rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <!-- Side-by-side bottom videos -->
+            <div class="video-row-two">
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/EXHV5JSLK0c?rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Fall 2022, BVlaEA/B</h4>
+                        <p>String Project BVlaEA/B students, Austin, TX</p>
+                    </div>
                 </div>
-                <div class="video-info">
-                    <h4>String Quartet</h4>
-                    <p>String Quintet No 7 in F Major, Op 59, No .1 Razumovsky (1806) By Beethoven.</p>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/7d50qqQVZ6M?rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-info">
-                    <h4>String Project</h4>
-                    <p>Fall 2022, BVlaEA/B — String Project BVlaEA/B students, Austin, TX</p>
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/7d50qqQVZ6M?rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>String Quartet</h4>
+                        <p>String Quintet No 7 in F Major, Op 59, No .1 Razumovsky (1806) By Beethoven.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,20 +111,8 @@
     <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
 </div>
 
-<footer>
-    <div class="footer-inner">
-        <div class="footer-social">
-            <a href="https://www.youtube.com/@Jingyi_Song" target="_blank" rel="noopener" aria-label="YouTube Channel">
-                <svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000">
-                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10A10 10 0 0012 2z"/>
-                    <path fill-rule="evenodd" fill="#fff" d="M17.607 14.302s.066-.931.066-1.866l.003-.88c0-.93-.069-1.865-.069-1.865a2.363 2.363 0 00-.436-1.146 1.702 1.702 0 00-1.16-.52c-1.615-.116-4.025-.149-4.025-.149s-2.422.033-4.037.15c-.436.012-.85.193-1.156.505-.335.349-.364 1.153-.364 1.153s-.033.942-.033 1.876v.884c0 .93.033 1.865.033 1.865.033.413.177.809.418 1.146.344.31.788.484 1.251.49.924.088 3.913.117 3.913.117s2.418-.004 4.033-.12c.433-.004.847-.18 1.152-.488.242-.338.384-.737.411-1.152zm-3.68-2.422l-3.116 1.614-.004-3.24 3.12 1.626z"/>
-                </svg>
-            </a>
-        </div>
-        <hr style="width:100%;max-width:400px;border:none;border-top:1px solid #ddd">
-        <p class="footer-copy">Copyright © 2025 Jingyi Song All Rights Reserved</p>
-    </div>
-</footer>
+<div id="footer-placeholder"></div>
+<script>document.getElementById('footer-placeholder').outerHTML = getFooterHTML();</script>
 
 <script src="script.js"></script>
 </body>
